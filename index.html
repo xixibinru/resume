@@ -13,7 +13,7 @@
             width: 7.5rem;
         }
         body,td,th {
-            font-size: 0.16rem;
+            font-size: 0.18rem;
             color: #000;
         }
         td {
@@ -97,34 +97,34 @@
           <td colspan="7">工作中的项目</td>
         </tr>
         <tr>
-          <td colspan="2">成长记忆后台管理</td>
+          <td height="38" colspan="3">成长记忆后台管理</td>
           <td colspan="5"><a href="http://cms.ahczjy.cc">http://cms.ahczjy.cc</a></td>
         </tr>
         <tr>
-          <td colspan="2">云家洁手机端页面</td>
+          <td height="38" colspan="3">云家洁手机端页面</td>
           <td colspan="5"><a href="https://xixibinru.github.io/yunjiajie/">https://xixibinru.github.io/yunjiajie/</a></td>
         </tr>
         <tr>
-          <td colspan="2">云家洁分享注册页面</td>
-          <td colspan="5"><a href="https://xixibinru.github.io/yunjiajieshare/">https://xixibinru.github.io/yunjiajieshare/</a></td>
+          <td height="38" colspan="3">云家洁分享注册页面</td>
+          <td colspan="5"><a href="https://xixibinru.github.io/yunjiajie/">https://xixibinru.github.io/yunjiajie/</a></td>
         </tr>
         <tr>
-          <td colspan="2">怡云网络pc端</td>
+          <td height="38" colspan="3">怡云网络pc端</td>
           <td colspan="5"><a href="https://xixibinru.github.io/yiyunwangl/">https://xixibinru.github.io/yiyunwangl/</a></td>
         </tr>
         <tr>
-          <td colspan="2">怡云网络移动端</td>
+          <td height="38" colspan="3">怡云网络移动端</td>
           <td colspan="5"><a href="https://xixibinru.github.io/yiyunm/">https://xixibinru.github.io/yiyunm/</a></td>
         </tr>
         <tr>
-          <td colspan="7">其他</td>
+          <td height="38" colspan="7">其他</td>
         </tr>
         <tr>
-          <td colspan="2">微金所</td>
+          <td height="38" colspan="3">微金所</td>
           <td colspan="5"><a href="https://xixibinru.github.io/weijinsuo/">https://xixibinru.github.io/weijinsuo/</a></td>
         </tr>
         <tr>
-          <td colspan="2">京东手机端</td>
+          <td height="38" colspan="3">京东手机端</td>
           <td colspan="5"><a href="https://xixibinru.github.io/mjd/">https://xixibinru.github.io/mjd</a></td>
         </tr>
       </table>
@@ -134,33 +134,23 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            function client(){
-                if(window.innerWidth != null){
-                    return{
-                        width: window.innerWidth,
-                        height: window.innerHeight
-                    }
-                }else if(document.compatMode == "CSS1Compat"){
-                    return{
-                        width: document.documentElement.clientWidth,
-                        height:document.documentElement.clientHeight
-                    }
-                }else{
-                    return{
-                        width:document.body.clientWidth,
-                        height:document.body.clientHeight
-                    }
-                }
-            }
-            var html = document.getElementsByTagName('html')[0];
-            var windowWidth = client().width;
-            console.log(windowWidth);
-            windowWidth = windowWidth > 750 ? 750 : windowWidth;
-            console.log(windowWidth);
-            console.log(html);
-            html.style.fontSize = windowWidth / 7.5 + 'px';
-            console.log(html.style.fontSize);
-        }, false);
+          var html = document.documentElement || window || document.body;
+          var windowWidth = html.clientWidth;
+          windowWidth = windowWidth > 750 ? 750 : windowWidth;
+          html.style.fontSize = windowWidth / 7.5 + 'px';
+      
+          //返回按钮 已舍弃
+          // if(!document.querySelector('.goBack')) return;
+          // var goback = document.querySelector('.goBack');
+          // goback.addEventListener('click', function (event) {
+          //     if(event.preventDefault){
+          //     event.preventDefault();
+          //     }else {
+          //         event.returnValue = false;
+          //     }
+          //     window.history.go(-1);
+          // },false);
+      }, false);
     </script>
     
     </body>
